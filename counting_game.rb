@@ -24,13 +24,14 @@ end
 
 def counting_game people, num
   direction = 1
-  count = 1
+  count = 0
   (1..num).each do |x|
-    direction = switch_direction direction if x.divisible_by_7
-    count += direction if x.divisible_by_11?
-    count = people_modify count, people
     count += direction
     count = people_modify count, people
+    direction = switch_direction direction if x.divisible_by_7?
+    count += direction if (x-1).divisible_by_11? && x != 1
+    count = people_modify count, people
+    puts "#{count}, #{x}"
   end
   count
 end
