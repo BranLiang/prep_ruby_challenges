@@ -14,17 +14,23 @@ end
 
 def people_modify number, people
   if number > people
-    number = number - people
+    number - people
   elsif number < 1
-    number = number + people
+    number + people
+  else
+    number
   end
 end
 
 def counting_game people, num
   direction = 1
   count = 1
-  (1..count).each do |x|
+  (1..num).each do |x|
     direction = switch_direction direction if x.divisible_by_7
-    
+    count += direction if x.divisible_by_11?
+    count = people_modify count, people
     count += direction
-    people_modify count, people
+    count = people_modify count, people
+  end
+  count
+end
