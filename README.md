@@ -43,3 +43,11 @@ Write a method overlap which takes two rectangles defined by the coordinates of 
 > overlap( [ [0,0],[1,4] ], [ [1,1],[3,2] ] )
 => false
 ```
+
+##Counting Game
+Let's take on a more challenging logic problem. Remember the counting game that you pseudocoded during the Pseudocoding Assignment? For a recap:
+
+10 friends are sitting in a circle around a table and decide to play a new game. In it, they count up through the numbers from 1 to 100. The first person says "1", the second says "2" and so on... but with a few catches:
+
+Whenever the number is divisible by 7, they switch directions. So person 6 will say "6", person 7 will say "7", then person 6 again will say "8".
+Whenever the number is divisible by 11, they skip the next person for the following number. For instance, if person 3 says "33", person 5 will say "34" instead (person 4 gets skipped).
